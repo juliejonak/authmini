@@ -42,6 +42,7 @@ function protected(req, res, next){
                 //token is invalid
                 res.status(401).json({ message: "Invalid token." })
             } else {
+                console.log(decodedToken);
                 next();
             }
         })
@@ -103,6 +104,8 @@ server.get('/api/users', protected, (req, res) => {
 server.get('/', (req, res) => {
     res.send('It is aliiiiiive!')
 });
+
+
 
 
 //SERVER
